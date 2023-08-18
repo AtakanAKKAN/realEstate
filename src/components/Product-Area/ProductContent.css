@@ -1,0 +1,17 @@
+.portföy{
+    color: #4B586F;
+}
+
+.ozellik_kutusu{
+    @apply w-full flex justify-between text-lg items-start mb-1;
+}
+
+.emlakcı-button{
+   @apply w-full p-1 relative text-xl bg-cyan-100 text-blue-800 rounded-lg;
+   border: 1px solid #CFFAFE;
+}
+
+.emlakcı-button:hover{
+    border: 1px solid #1E40AF;
+    background-color: transparent;
+}

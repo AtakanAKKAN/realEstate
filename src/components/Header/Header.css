@@ -1,0 +1,11 @@
+.nav-link{
+    @apply mr-[2rem] text-xl
+}
+
+.login-hover{
+    transition: 250ms;
+}
+
+.login-hover:hover{
+    color: blue;
+}
