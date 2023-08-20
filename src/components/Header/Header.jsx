@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="w-full bg-slate-50 p-4 rounded-3xl ">
       <div className="flex justify-between items-center p-3">
-        <Link to={"/"} className="text-3xl cursor-pointer">
+        <Link to={":homepage"} className="text-3xl cursor-pointer">
           LOGO
         </Link>
         <div className="nav max-[1000px]:hidden">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductContent.css";
 import productData from "../../ProductData";
 import { BsTelephoneForward } from "react-icons/bs";
@@ -6,6 +6,7 @@ import { BsTelephoneForward } from "react-icons/bs";
 const ProductContent = ({ product }) => {
   const {
     başlık,
+    id,
     portföy,
     price,
     adres = {},
@@ -17,25 +18,60 @@ const ProductContent = ({ product }) => {
     emlakcı,
     emlakcı_adres,
     ünvan,
+    url = [],
   } = product;
 
-  console.log(productData[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  //   emlakcı: "Altan Torun",
-  //     ünvan: "Patron",
-  //     emlakcı_adres: "Manisa / Soma"
+  const slideNextHandler = () => {
+    const newIndex = currentIndex === url.length - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const slidePerivosHandler = () => {
+    const newIndex = currentIndex === 0 ? url.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  console.log(url.length);
 
   return (
     <div className="p-4 flex flex-col w-full">
       <h2 className="text-4xl w-[70%] mb-3">{başlık}</h2>
       <small className="portföy mb-2">Portföy No: {portföy}</small>
       <div className="flex gap-5">
-        <div className="w-1/2" id="resim">
+        <div className="w-[50%] relative" id="resim">
           <img
             className="w-full h-full object-cover"
-            src="/images/ev-1.jpg"
+            src={url[currentIndex]}
             alt=""
           />
+          <button
+            className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-white cursor-pointer "
+            onClick={slidePerivosHandler}
+          >
+            Önceki
+          </button>
+          <button
+            className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 text-white cursor-pointer "
+            onClick={slideNextHandler}
+          >
+            Sıradaki
+          </button>
+
+          <div className="w-[150px] flex gap-5 ">
+            {" "}
+            {url.map((item, index) => (
+              <>
+                <img
+                  className="w-full object-cover mt-5 mb-10"
+                  onClick={() => setCurrentIndex(index)}
+                  src={item}
+                  alt=""
+                />
+              </>
+            ))}
+          </div>
         </div>
         <div className="w-[20%] flex flex-col" id="içerik">
           <span className="text-2xl font-bold">{price} ₺</span>
@@ -65,13 +101,19 @@ const ProductContent = ({ product }) => {
         </div>
         <div className="w-[30%] p-4 bg-slate-50 rounded-lg" id="emlakcı">
           <div className="relative mb-5">
-            <div className="w-[125px]">
-              <img src="/images/img_avatar2.png" alt="" />
+            <div className="w-[30%] h-auto">
+              <img src={require("../../images/img_avatar2.png")} alt="" />
             </div>
             <div className="flex flex-col absolute top-0 right-0 w-[60%]">
-              <strong className="text-2xl">{emlakcı}</strong>
-              <span className="text-xl">{ünvan}</span>
-              <small className="text-lg">{emlakcı_adres} </small>
+              <strong className="text-2xl max-lg:text-xl  max-md:text-lg">
+                {emlakcı}
+              </strong>
+              <span className="text-xl max-lg:text-lg max-md:text-base ">
+                {ünvan}
+              </span>
+              <small className="text-lg max-lg:text-base  max-md:text-sm">
+                {emlakcı_adres}{" "}
+              </small>
             </div>
           </div>
           <button className="emlakcı-button">

@@ -1,11 +1,11 @@
 const productData = [
   {
-    id: 1,
-    price: "10.000.000" ,
+    id: 0,
+    price: "10.000.000",
     ozellik: {
       yatak: "1 Yataklı",
       banyo: "1 Banyolu",
-      kat: "1.kat",  
+      kat: "1.kat",
     },
     adres: {
       il: "Manisa",
@@ -15,7 +15,8 @@ const productData = [
       no: "No: X ",
     },
     durum: "Satista",
-    başlık: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
+    başlık:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
     portföy: "P46845745",
     Emlak_Tipi: "Villa",
     m_2_brüt: "100",
@@ -24,24 +25,31 @@ const productData = [
     bina_yaşı: "1",
     emlakcı: "Altan Torun",
     ünvan: "Patron",
-    emlakcı_adres: "Manisa/ Soma"
+    emlakcı_adres: "Manisa/ Soma",
+    url: [
+      "https://picsum.photos/seed/img1/640/400",
+      "https://picsum.photos/seed/img2/640/400",
+      "https://picsum.photos/seed/img3/640/400",
+    ],
   },
   {
-    id: 2,
+    id: 1,
     price: "20.000.000",
     ozellik: {
       yatak: "2 Yataklı",
       banyo: "2 Banyolu",
       kat: "2.kat",
     },
-    adres: {il: "Manisa",
-    ilçe: "Soma",
+    adres: {
+      il: "Manisa",
+      ilçe: "Soma",
       mahalle: "X Mahallesi ",
       sokak: "X Sokağı ",
       no: "No: X ",
     },
     durum: "Satista",
-    başlık: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
+    başlık:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
     portföy: "P46845745",
     Emlak_Tipi: "Villa",
     m_2_brüt: "200",
@@ -50,24 +58,31 @@ const productData = [
     bina_yaşı: "2",
     emlakcı: "Altan Torun",
     ünvan: "Patron",
-    emlakcı_adres: "Manisa / Soma"
+    emlakcı_adres: "Manisa / Soma",
+    url: [
+      "https://picsum.photos/id/15/640/400",
+      "https://picsum.photos/id/16/640/400",
+      "https://picsum.photos/id/17/640/400",
+    ],
   },
   {
-    id: 3,
+    id: 2,
     price: "30.000.000",
     ozellik: {
       yatak: "3 Yataklı",
       banyo: "3 Banyolu",
       kat: "3.kat",
     },
-    adres: {il: "Manisa",
-    ilçe: "Soma",
+    adres: {
+      il: "Manisa",
+      ilçe: "Soma",
       mahalle: "X Mahallesi ",
       sokak: "X Sokağı ",
       no: "No: X ",
     },
     durum: "Kiralık",
-    başlık: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
+    başlık:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
     portföy: "P46845745",
     Emlak_Tipi: "Villa",
     m_2_brüt: "300",
@@ -76,24 +91,31 @@ const productData = [
     bina_yaşı: "3",
     emlakcı: "Altan Torun",
     ünvan: "Patron",
-    emlakcı_adres: "Manisa / Soma"
+    emlakcı_adres: "Manisa / Soma",
+    url: [
+      "https://picsum.photos/id/18/640/400",
+      "https://picsum.photos/id/19/640/400",
+      "https://picsum.photos/id/20/640/400",
+    ],
   },
   {
-    id:4,
+    id: 3,
     price: "40.000.000",
     ozellik: {
       yatak: "4 Yataklı",
       banyo: "4 Banyolu",
       kat: "4.kat",
     },
-    adres: {il: "Manisa",
-    ilçe: "Soma",
+    adres: {
+      il: "Manisa",
+      ilçe: "Soma",
       mahalle: "X Mahallesi ",
       sokak: "X Sokağı ",
       no: "No: X ",
     },
     durum: "Kiralık",
-    başlık: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
+    başlık:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
     portföy: "P46845745",
     Emlak_Tipi: "Villa",
     m_2_brüt: "400",
@@ -102,24 +124,31 @@ const productData = [
     bina_yaşı: "4",
     emlakcı: "Altan Torun",
     ünvan: "Patron",
-    emlakcı_adres: "Manisa / Soma"
+    emlakcı_adres: "Manisa / Soma",
+    url: [
+      "https://picsum.photos/id/21/640/400",
+      "https://picsum.photos/id/22/640/400",
+      "https://picsum.photos/id/23/640/400",
+    ],
   },
   {
-    id:5,
+    id: 4,
     price: "50.000.000",
     ozellik: {
       yatak: "5 Yataklı",
       banyo: "5 Banyolu",
       kat: "5.kat",
     },
-    adres: {il: "Manisa",
-    ilçe: "Soma",
+    adres: {
+      il: "Manisa",
+      ilçe: "Soma",
       mahalle: "X Mahallesi ",
       sokak: "X Sokağı ",
       no: "No: X ",
     },
     durum: "Kiralık",
-    başlık: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
+    başlık:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
     portföy: "P46845745",
     Emlak_Tipi: "Villa",
     m_2_brüt: "500",
@@ -128,24 +157,31 @@ const productData = [
     bina_yaşı: "5",
     emlakcı: "Altan Torun",
     ünvan: "Patron",
-    emlakcı_adres: "Manisa / Soma"
+    emlakcı_adres: "Manisa / Soma",
+    url: [
+      "https://picsum.photos/id/24/640/400",
+      "https://picsum.photos/id/25/640/400",
+      "https://picsum.photos/id/26/640/400",
+    ],
   },
   {
-    id:6,
+    id: 5,
     price: "60.000.000",
     ozellik: {
       yatak: "6 Yataklı",
       banyo: "6 Banyolu",
       kat: "6.kat",
     },
-    adres: {il: "Manisa",
-    ilçe: "Soma",
+    adres: {
+      il: "Manisa",
+      ilçe: "Soma",
       mahalle: "X Mahallesi ",
       sokak: "X Sokağı ",
       no: "No: X ",
     },
     durum: "Kiralık",
-    başlık: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
+    başlık:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, ea.",
     portföy: "P46845745",
     Emlak_Tipi: "Villa",
     m_2_brüt: "600",
@@ -154,7 +190,12 @@ const productData = [
     bina_yaşı: "6",
     emlakcı: "Altan Torun",
     ünvan: "Patron",
-    emlakcı_adres: "Manisa / Soma"
+    emlakcı_adres: "Manisa / Soma",
+    url: [
+      "https://picsum.photos/id/27/640/400",
+      "https://picsum.photos/id/28/640/400",
+      "https://picsum.photos/id/29/640/400",
+    ],
   },
 ];
 

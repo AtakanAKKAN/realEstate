@@ -40,7 +40,7 @@ const SwitchTab = () => {
             Repudiandae, voluptatibus. TAB-1
           </p>
           <div className="img-box">
-            <img src="/images/logo.png" alt="" className="img" />
+            <img src={require("../../images/logo.png")} alt="" className="img" />
           </div>
         </div>
         <div className={toggle === 2 ? "content active-content" : "content"}>
@@ -50,7 +50,7 @@ const SwitchTab = () => {
            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum quibusdam natus aperiam unde totam cumque praesentium assumenda voluptatum sit suscipit.
           </p>
           <div className="img-box">
-            <img src="/images/house.jpg" alt="" className="img" />
+            <img src={require("../../images/house.jpg")} alt="" className="img" />
           </div>
         </div>
         <div className={toggle === 3 ? "content active-content" : "content"}>
@@ -60,7 +60,7 @@ const SwitchTab = () => {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo sunt sed laborum ipsum sint alias distinctio modi officiis cumque? Repellendus modi iusto harum assumenda nostrum quam quisquam nulla voluptatum debitis!
           </p>
           <div className="img-box">
-            <img src="/images/img_avatar2.png" alt="" className="img" />
+            <img src={require("../../images/img_avatar2.png")} alt="" className="img" />
           </div>
         </div>
       </div>
