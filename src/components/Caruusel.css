@@ -1,7 +1,0 @@
-.img-carousel{
-    @apply grid justify-center items-center w-[640px];
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    max-height: 400px;
-    gap: 20px;
-}

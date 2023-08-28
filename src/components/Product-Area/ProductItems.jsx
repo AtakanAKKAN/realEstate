@@ -1,22 +1,60 @@
 /* eslint-disable no-unused-vars */
 import "./ProductItem.css";
 import { MdLocationOn, MdOutlineBathtub } from "react-icons/md";
-import { BsFillArrowUpRightCircleFill, BsBuilding } from "react-icons/bs";
+import {
+  BsFillArrowUpRightCircleFill,
+  BsBuilding,
+  BsFillArrowRightCircleFill,
+  BsFillArrowLeftCircleFill,
+} from "react-icons/bs";
 import { IoBedOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-const ProductItems = ({ product }) => {
-  const { price, ozellik = {}, adres = {}, durum, id } = product;
+const ProductItems = ({ product, index }) => {
+  const { price, ozellik = {}, adres = {}, durum, id, url } = product;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slideNextHandler = () => {
+    const newIndex = currentIndex === url.length - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const slidePerivosHandler = () => {
+    const newIndex = currentIndex === 0 ? url.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
 
   return (
-    <div className="box-container">
-      <div className="img-box">
-        <img
-          src={require("../../images/ev-1.jpg")}
-          alt=""
-          className="img"
-        />
+    <motion.div
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      className="box-container"
+    >
+      <div className="group relative img-box">
+        <div
+          style={{ backgroundImage: `url(${url[currentIndex]})` }}
+          className="w-full h-full rounded-2xl bg-center bg-cover"
+        ></div>
+
+        <button
+          className="group-hover:block hidden absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-white cursor-pointer transition-all "
+          onClick={slidePerivosHandler}
+        >
+          <BsFillArrowLeftCircleFill />
+        </button>
+        <button
+          className="group-hover:block hidden absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 text-white cursor-pointer transition-all"
+          onClick={slideNextHandler}
+        >
+          <BsFillArrowRightCircleFill />
+        </button>
       </div>
+
       <div className="fiyat-durum">
         <span className="fiyat">{price} ₺</span>
         <span className="durum">{durum}</span>
@@ -71,7 +109,7 @@ const ProductItems = ({ product }) => {
           <BsFillArrowUpRightCircleFill />
         </span>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,9 +1,6 @@
 .product-container {
-    @apply grid ;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px;
-    justify-items: center;
-    align-items: center;
+    @apply flex flex-wrap ;
+    gap: 0.5vw;
 }
 
 .kategori-liste{
@@ -35,8 +32,19 @@
 }
 
 .kategori-secenek{
-    @apply mb-2 text-xl w-fit cursor-pointer  ;
+    @apply my-[0.75vw] text-[1.5vw] w-fit cursor-pointer block rounded-[1.5vw];
+    padding: 0.3vw 0.6vw;
+    color: red;
+    border: 1px solid red;
 }
+
+.kategori-secenek:hover,
+.kategori-secenek.active{
+    color: white;
+    background-color: red;
+}
+
+
 
 .kategori-fiyat-secenek{
     @apply text-xl ;

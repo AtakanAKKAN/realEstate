@@ -6,8 +6,8 @@
 }
 
 .tabs{
-    @apply text-xl mx-5 bg-red-700 ;
-    width: 100px;
+    @apply text-[1.5vw] mx-[2.5vw] bg-red-700 ;
+    width: 10vw;
     text-align: center;
     color: white;
     cursor: pointer;
@@ -24,13 +24,13 @@
     content: "";
     position: absolute;
     width: 50%;
-    height: 2px;
+    height: 0.15vw;
     bottom: 0;
     left: 25%;
 }
 
 .content-tabs{
-    @apply p-4 rounded-xl ;
+    @apply p-[2vw] rounded-[3vw] ;
     background-color: #faebd7;
     width: 100%;
 
@@ -40,13 +40,22 @@
     display: none;
 }
 
+.content h2{
+    font-size: 2.5vw;
+}
+
+.content p{
+    font-size: 1.5vw;
+}
+
 .active-content{
     display: initial;
 }
 
-.img-box{
-    width: 300px;
-    height: 250px;
+.content .img-box{
+    width: 45vw;
+    height: 20vw;
+    margin: auto;
 }
 
 .img{

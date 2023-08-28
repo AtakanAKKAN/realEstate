@@ -1,20 +1,14 @@
 <Routes>
-        <Route
-          path=""
-          element={
-            <>
-              <SwitchTab />
-            </>
-          }
-          />
-          {/* <Route
-            path="/LogIn"
-            element={
-              <>
-                <MainLogg />
-              </>
-            }
-          />
-          <Route path="/LogIn/emlakKayıt" element={<EmlakKayıt />} />
-          <Route path="/LogIn/müşteriKayıt" element={<MüşteriKayıt />} /> */}
-      </Routes>
+  <Route path="" element={ <>
+    <SwitchTab />
+    </>
+    }
+    />
+    <Route path="/LogIn" element={ <>
+      <MainLogg />
+      </>
+      }
+      />
+      <Route path="/LogIn/emlakKayıt" element={<EmlakKayıt />} />
+      <Route path="/LogIn/müşteriKayıt" element={<MüşteriKayıt />} />
+</Routes>

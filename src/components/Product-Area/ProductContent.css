@@ -1,17 +1,37 @@
-.portföy{
-    color: #4B586F;
+.portföy {
+  color: #4b586f;
+  font-size: 1vw;
 }
 
-.ozellik_kutusu{
-    @apply w-full flex justify-between text-lg items-start mb-1;
+.ozellik_kutusu {
+  @apply w-full flex justify-between text-[1.5vw] items-start mb-[.375vw];
 }
 
-.emlakcı-button{
-   @apply w-full p-1 relative text-xl bg-cyan-100 text-blue-800 rounded-lg;
-   border: 1px solid #CFFAFE;
+.emlakcı-button {
+  @apply w-full p-[.375vw] relative text-[1.2vw] bg-cyan-100 text-blue-800 rounded-[0.5vw];
+  border: 1px solid #cffafe;
 }
 
-.emlakcı-button:hover{
-    border: 1px solid #1E40AF;
-    background-color: transparent;
+.emlakcı-button:hover {
+  border: 1px solid #1e40af;
+  background-color: transparent;
+}
+
+.slide-button-left {
+  @apply hidden group-hover:block absolute top-[40%] -translate-x-0 translate-y-[-50%] left-[1.2vw] rounded-full p-[.5vw] text-white cursor-pointer;
+  font-size: 3vw;
+}
+
+.slide-button-right {
+  @apply hidden group-hover:block absolute top-[40%] -translate-x-0 translate-y-[-50%] right-[1.2vw] rounded-full p-[.5vw] text-white cursor-pointer;
+  font-size: 3vw;
+}
+
+.ana-resim {
+  @apply w-full rounded-[1.5vw] bg-center bg-cover duration-500;
+  min-height: 90vh;
+}
+
+.emlakcı-kutusu {
+  @apply absolute -right-[1vw] bottom-0 p-[.75vw] bg-slate-50 rounded-[0.5vw] w-[25%];
 }

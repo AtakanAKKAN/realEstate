@@ -1,51 +1,53 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect } from "react";
 import ProductItems from "./ProductItems";
 import "./Products.css";
 import productData from "../../ProductData";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../Context/MyContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Products = () => {
-  const [filtreliListe, setFiltreliListe] = new useState([]);
-  const [filtreAcık, setFiltreAcık] = useState(false);
-  const [inputValueMin, setInputValueMin] = useState(0);
-  const [inputValueMax, setInputValueMax] = useState(0);
+  const {
+    filtreliListe,
+    setFiltreliListe,
+    // inputValueMin,
+    setInputValueMin,
+    // inputValueMax,
+    setInputValueMax,
+    MainList,
+    FiltreSozcuk,
+    setFiltreSozcuk,
+  } = useContext(MyContext);
 
-  const fiyatListeFiltreHandler = () => {
-    fiyatListeHandler();
-    setFiltreAcık(!filtreAcık);
-  };
+  useEffect(() => {
+    if (FiltreSozcuk === "") {
+      setFiltreliListe(MainList);
+      return;
+    }
+    const Filtered = MainList.filter((item) =>
+      item.durum.includes(FiltreSozcuk)
+    );
+    setFiltreliListe(Filtered);
+  }, [FiltreSozcuk, MainList, setFiltreliListe]);
 
-  const fiyatListeHandler = () => {
-    const fiyatProductList = productData
-      .filter(
-        (item) => item.price >= inputValueMin && item.price <= inputValueMax
-      )
-      .map((product) => <ProductItems key={product.price} product={product} />);
-    setFiltreliListe(fiyatProductList);
-  };
-
-  const satılıkFiltreListeHandler = (filtre) => {
-    satılıkkFiltreliListe(filtre);
-    setFiltreAcık(!filtreAcık);
-  };
-
-  const satılıkkFiltreliListe = (filtre) => {
-    const satılıkProductList = productData
-      .filter((item) => item.durum.includes(filtre))
-      .map((product) => <ProductItems key={product.price} product={product} />);
-    setFiltreliListe(satılıkProductList);
-  };
-
-  const productList = productData.map((product) => (
-    <ProductItems key={product.price} product={product} />
-  ));
+  // const fiyatListeHandler = () => {
+  //   const fiyatProductList = MainList
+  //     .filter(
+  //       (item) =>
+  //         parseFloat(item.price) >= inputValueMin &&
+  //         parseFloat(item.price) <= inputValueMax
+  //     )
+  //
+  //   setFiltreliListe(fiyatProductList);
+  // };
 
   return (
     <div className="w-full flex rounded-lg mt-5">
       <div className="w-[25%] flex flex-col bg-slate-50 p-4 rounded-lg">
         <span className="kategori-liste">Gayrimenkul</span>
         <span className="kategori-liste">
-          Konut <span className="kategori-liste-adet">({productData.length})</span>
+          Konut{" "}
+          <span className="kategori-liste-adet">({productData.length})</span>
         </span>
         <span className="kategori-liste">
           Ticari <span className="kategori-liste-adet">(2222)</span>
@@ -54,20 +56,38 @@ const Products = () => {
           Arsa/Arazi <span className="kategori-liste-adet">(3333)</span>
         </span>
         <div className="kategoriler">
-          <p
-            className="kategori-secenek"
-            onClick={() => satılıkFiltreListeHandler("Satista")}
+          <button
+            className={
+              FiltreSozcuk === ""
+                ? "kategori-secenek active"
+                : "kategori-secenek"
+            }
+            onClick={() => setFiltreSozcuk("")}
+          >
+            Hepsini Göster ({MainList.length})
+          </button>
+          <button
+            className={
+              FiltreSozcuk === "Satista"
+                ? "kategori-secenek active"
+                : "kategori-secenek"
+            }
+            onClick={() => setFiltreSozcuk("Satista")}
           >
             Satılık (
-            {productData.filter((item) => item.durum.includes("Satista")).length})
-          </p>
-          <p
-            className="kategori-secenek"
-            onClick={() => satılıkFiltreListeHandler("Kiralık")}
+            {MainList.filter((item) => item.durum.includes("Satista")).length})
+          </button>
+          <button
+            className={
+              FiltreSozcuk === "Kiralık"
+                ? "kategori-secenek active"
+                : "kategori-secenek"
+            }
+            onClick={() => setFiltreSozcuk("Kiralık")}
           >
             Kiralık (
-            {productData.filter((item) => item.durum.includes("Kiralık")).length})
-          </p>
+            {MainList.filter((item) => item.durum.includes("Kiralık")).length})
+          </button>
           <p className="kategori-secenek">Ticari</p>
           <div className="kategori-fiyat-secenek">
             <span>Asgari / Azami Fiyat</span>
@@ -76,32 +96,30 @@ const Products = () => {
                 <input
                   onChange={(e) => setInputValueMin(Number(e.target.value))}
                   type="number"
-                  placeholder="Min"
+                  placeholder="Min - 1"
                   className="kategori-fiyat-input mr-2"
                 />
                 <span className="text-3xl relative top-1"> / </span>
                 <input
                   onChange={(e) => setInputValueMax(Number(e.target.value))}
                   type="number"
-                  placeholder="Max"
+                  placeholder="Max - 99"
                   className="kategori-fiyat-input mx-2"
                 />
               </div>
-              <Link
-                className={filtreAcık ? "filtre-temizleme-button" : "kategori-button"}
-                onClick={fiyatListeFiltreHandler}
-              >
-                {filtreAcık ? "Temizle" : "Ara"}
-              </Link>
+              <Link className="kategori-button">Ara</Link>
             </div>
           </div>
         </div>
       </div>
-      {filtreAcık ? (
-        <div className="w-[75%] ml-5 product-container">{filtreliListe}</div>
-      ) : (
-        <div className="w-[75%] ml-5 product-container">{productList}</div>
-      )}
+
+      <motion.div layout className="w-[75%] ml-[1vw] product-container">
+        <AnimatePresence>
+          {filtreliListe.map((product, index) => (
+            <ProductItems key={index} product={product} index={index} />
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 };

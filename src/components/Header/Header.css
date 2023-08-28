@@ -1,5 +1,6 @@
 .nav-link{
-    @apply mr-[2rem] text-xl
+    @apply mr-[1.5vw] ;
+    font-size: 1.5vw;
 }
 
 .login-hover{
