@@ -10,7 +10,7 @@ const SwitchTab = () => {
   };
 
   return (
-    <div className="containerr w-full rounded-3xl mt-[2.5vw]">
+    <div className="containerr w-full rounded-3xl mt-[2.5vw] max-lg:mt-5">
       <div className="block-tabs">
         <span
           className={toggle === 1 ? "tabs active-tabs" : "tabs"}
