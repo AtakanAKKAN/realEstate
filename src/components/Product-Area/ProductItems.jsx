@@ -38,7 +38,7 @@ const ProductItems = ({ product, index }) => {
       <div className="group relative img-box">
         <div
           style={{ backgroundImage: `url(${url[currentIndex]})` }}
-          className="w-full h-full rounded-2xl bg-center bg-cover"
+          className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
         ></div>
 
         <button

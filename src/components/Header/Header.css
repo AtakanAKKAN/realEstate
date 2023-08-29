@@ -1,6 +1,5 @@
 .nav-link{
-    @apply mr-[1.5vw] ;
-    font-size: 1.5vw;
+    @apply mr-[1.5vw] text-[1.5vw] max-lg:hidden ;
 }
 
 .login-hover{
@@ -9,4 +8,8 @@
 
 .login-hover:hover{
     color: blue;
+}
+
+.hamburger{
+    @apply hidden max-lg:block text-2xl max-sm:text-xl ;
 }

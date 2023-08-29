@@ -1,21 +1,11 @@
 .box-container {
-  @apply flex flex-col p-2 rounded-lg pt-[0.75vw] w-[50vh] max-[1000px]:w-[300px] ;
+  @apply flex flex-col p-2 rounded-lg pt-[0.75vw] w-[300px] h-[440px] max-lg:h-[400px] ;
   background-color: #fdfdfd;
-  margin: auto 0 ;
 }
 
 .img-box {
-  width: 100%;
-  height: 40vh;
-}
-
-.img-box .img {
-  @apply rounded-lg;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin: auto;
-  transition: 500ms ease-in;
+  max-width: 100%;
+  height: 400px;
 }
 
 .ozellikler {

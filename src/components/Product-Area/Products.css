@@ -1,87 +1,83 @@
 .product-container {
-    @apply flex flex-wrap ;
-    gap: 0.5vw;
+  @apply flex flex-wrap;
+  gap: 0.5vw 1vw;
 }
 
-.kategori-liste{
-    @apply text-xl text-blue-600 cursor-pointer w-fit;
-    transition: 500ms;
+.kategori-liste {
+  @apply text-xl text-blue-600 cursor-pointer w-fit max-lg:text-lg max-md:text-base max-sm:text-sm;
+  transition: 500ms;
 }
 
-.kategori-liste:hover{
-    text-decoration: underline;
+.kategori-liste:hover {
+  text-decoration: underline;
 }
 
-.kategoriler{
-    position: relative;
-    margin-top: 10px;
+.kategoriler {
+  position: relative;
+  margin-top: 10px;
 }
 
-.kategoriler::before{
-    content: "";
-    width: 100%;
-    height: 3px;
-    background-color: #9AAFC3;
-    position: absolute;
-    top: -6px;
-    left: 0;
+.kategoriler::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #9aafc3;
+  position: absolute;
+  top: -6px;
+  left: 0;
 }
 
-.kategori-liste-adet{
-    @apply text-base text-blue-400 ml-1  ;
+.kategori-liste-adet {
+  @apply text-base text-blue-400 ml-1 max-md:text-sm max-sm:text-xs;
 }
 
-.kategori-secenek{
-    @apply my-[0.75vw] text-[1.5vw] w-fit cursor-pointer block rounded-[1.5vw];
-    padding: 0.3vw 0.6vw;
-    color: red;
-    border: 1px solid red;
+.kategori-secenek {
+  @apply my-[0.75vw] text-[1.5vw] w-fit cursor-pointer block rounded-2xl max-md:text-lg max-md:mx-5;
+  padding: 0.3vw 0.6vw;
+  color: red;
+  border: 1px solid red;
 }
 
 .kategori-secenek:hover,
-.kategori-secenek.active{
-    color: white;
-    background-color: red;
+.kategori-secenek.active {
+  color: white;
+  background-color: red;
 }
-
-
 
 .kategori-fiyat-secenek{
-    @apply text-xl ;
+  @apply text-xl max-md:text-lg max-sm:text-sm;
 }
 
-.kategori-fiyat-input{
-    @apply w-[45%] mt-2 pl-1 rounded-md text-slate-700;
-    border: 1px solid #9AAFC3 ;
-   
-    
+.kategori-fiyat-input {
+  @apply w-[45%] mt-2 pl-1 rounded-md text-slate-700;
+  border: 1px solid #9aafc3;
 }
 
-.filtre-temizleme-button{
-    @apply mt-5 pr-3 rounded py-1 bg-red-600 text-center;
-    color: white;
-    border: 2px solid transparent;
-    transition: 500ms;
+.filtre-temizleme-button {
+  @apply mt-5 pr-3 rounded py-1 bg-red-600 text-center;
+  color: white;
+  border: 2px solid transparent;
+  transition: 500ms;
 }
 
-.filtre-temizleme-button:hover{
-    @apply text-red-600;
-    background-color: transparent;
-    border: 2px solid #ff0000;
+.filtre-temizleme-button:hover {
+  @apply text-red-600;
+  background-color: transparent;
+  border: 2px solid #ff0000;
 }
 
-.kategori-button{
-    @apply mt-5 pr-3 rounded py-1 text-center;
-    background-color: #003DA5;
-    color: white;
-    border: 2px solid transparent;
-    transition: 500ms;
+.kategori-button {
+  @apply mt-5 pr-3 rounded py-1 text-center;
+  background-color: #003da5;
+  color: white;
+  border: 2px solid transparent;
+  transition: 500ms;
 }
 
-.kategori-button:hover{
-    color: #003DA5;
-    background-color: transparent;
-    border: 2px solid #003DA5;
+.kategori-button:hover {
+  color: #003da5;
+  background-color: transparent;
+  border: 2px solid #003da5;
 }
 
 input::-webkit-outer-spin-button,

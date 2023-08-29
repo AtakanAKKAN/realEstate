@@ -2,6 +2,7 @@ import React from "react";
 // import LogButton from "../singUpsingIn/LogButton";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Header = () => {
   return (
@@ -9,11 +10,11 @@ const Header = () => {
       <div className="flex justify-between items-center p-[1vw] ">
         <Link
           to={":homepage"}
-          className="text-[1.5vw] cursor-pointer relative w-[10vw] h-[5vw] "
+          className="cursor-pointer relative w-[10vw] h-[5vw] max-lg:w-[5rem] max-lg:h-[2rem] "
         >
           <img
             src={require("../../images/logo001.png")}
-            alt="" className="w-[10vw] h-[10vw] -translate-y-[2vw] rounded-[1.5vw] absolute "
+            alt="" className="w-[10vw] h-[10vw] -translate-y-[2vw] max-lg:w-full max-lg:h-[5rem] max-lg:-translate-y-[20%] rounded-[1.5vw] absolute object-cover "
           />
         </Link>
         <div className="nav flex items-center">
@@ -30,6 +31,9 @@ const Header = () => {
             Hakkımızda
           </Link>
         </div>
+        <span className="hamburger">
+          <AiOutlineMenu />
+        </span>
         {/* <LogButton /> */}
       </div>
     </div>
