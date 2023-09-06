@@ -9,10 +9,22 @@ export const MyProvider = ({ children }) => {
   const [FiltreSozcuk, setFiltreSozcuk] = useState("");
   const [inputValueMin, setInputValueMin] = useState(0);
   const [inputValueMax, setInputValueMax] = useState(0);
+  const [filtreIsOpen, setFiltreIsOpen] = useState(false)  
 
   useEffect(() => {
     FetchList();
   }, []);
+
+  useEffect(() => {
+    if (FiltreSozcuk === "") {
+      setFiltreliListe(MainList);
+      return;
+    }
+    const Filtered = MainList.filter((item) =>
+      item.durum.includes(FiltreSozcuk)
+    );
+    setFiltreliListe(Filtered);
+  }, [FiltreSozcuk, MainList, setFiltreliListe]);
 
   const FetchList = () => {
     const data = productData;
@@ -31,6 +43,8 @@ export const MyProvider = ({ children }) => {
     setMainList,
     FiltreSozcuk,
     setFiltreSozcuk,
+    filtreIsOpen, 
+    setFiltreIsOpen,
   };
 
   return <MyContext.Provider value={value}>{children}</MyContext.Provider>;

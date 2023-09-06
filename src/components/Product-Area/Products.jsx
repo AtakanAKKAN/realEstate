@@ -1,34 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import ProductItems from "./ProductItems";
 import "./Products.css";
 import productData from "../../ProductData";
-import { Link } from "react-router-dom";
 import { MyContext } from "../../Context/MyContext";
 import { motion, AnimatePresence } from "framer-motion";
+import PopupFilter from "./Product-Area-PopUp/PopupFilter";
+import FilterGroup from "./FilterGroup";
+import { FiFilter } from "react-icons/fi";
 
 const Products = () => {
-  const {
-    filtreliListe,
-    setFiltreliListe,
-    // inputValueMin,
-    setInputValueMin,
-    // inputValueMax,
-    setInputValueMax,
-    MainList,
-    FiltreSozcuk,
-    setFiltreSozcuk,
-  } = useContext(MyContext);
-
-  useEffect(() => {
-    if (FiltreSozcuk === "") {
-      setFiltreliListe(MainList);
-      return;
-    }
-    const Filtered = MainList.filter((item) =>
-      item.durum.includes(FiltreSozcuk)
-    );
-    setFiltreliListe(Filtered);
-  }, [FiltreSozcuk, MainList, setFiltreliListe]);
+  const { filtreliListe, filtreIsOpen, setFiltreIsOpen } =
+    useContext(MyContext);
 
   // const fiyatListeHandler = () => {
   //   const fiyatProductList = MainList
@@ -42,9 +24,9 @@ const Products = () => {
   // };
 
   return (
-    <div className="w-full flex max-md:flex-col rounded-lg mt-5 gap-[1.5vw]">
+    <div className="w-full flex max-md:flex-col rounded-lg mt-5 gap-2">
       <div className="w-[30%] flex flex-col bg-slate-50 p-4 rounded-lg max-md:w-full">
-        <div className="flex flex-col w-full max-md:flex-row max-md:justify-around">
+        <div className="flex flex-col w-full max-md:flex-row max-md:justify-around mb-2 ">
           <span className="kategori-liste">Gayrimenkul</span>
           <span className="kategori-liste">
             Konut{" "}
@@ -57,69 +39,21 @@ const Products = () => {
             Arsa/Arazi <span className="kategori-liste-adet">(3333)</span>
           </span>
         </div>
-        <div className="kategoriler max-md:flex max-md:flex-col">
-          <div className="max-md:flex max-md:m-auto max-md:mt-4">
-            <button
-              className={
-                FiltreSozcuk === ""
-                  ? "kategori-secenek active"
-                  : "kategori-secenek"
-              }
-              onClick={() => setFiltreSozcuk("")}
-            >
-              Hepsini Göster ({MainList.length})
-            </button>
-            <button
-              className={
-                FiltreSozcuk === "Satista"
-                  ? "kategori-secenek active"
-                  : "kategori-secenek"
-              }
-              onClick={() => setFiltreSozcuk("Satista")}
-            >
-              Satılık (
-              {MainList.filter((item) => item.durum.includes("Satista")).length}
-              )
-            </button>
-            <button
-              className={
-                FiltreSozcuk === "Kiralık"
-                  ? "kategori-secenek active"
-                  : "kategori-secenek"
-              }
-              onClick={() => setFiltreSozcuk("Kiralık")}
-            >
-              Kiralık (
-              {MainList.filter((item) => item.durum.includes("Kiralık")).length}
-              )
-            </button>
-            <p className="kategori-secenek">Ticari</p>
-          </div>
-          <div className="kategori-fiyat-secenek">
-            <span className="text-center m-auto block mt-5">Asgari / Azami Fiyat</span>
-            <div className="flex flex-col mt-2 relative">
-              <div className="flex">
-                <input
-                  onChange={(e) => setInputValueMin(Number(e.target.value))}
-                  type="number"
-                  placeholder="Min - 1"
-                  className="kategori-fiyat-input mr-2"
-                />
-                <span className="text-3xl relative top-1"> / </span>
-                <input
-                  onChange={(e) => setInputValueMax(Number(e.target.value))}
-                  type="number"
-                  placeholder="Max - 99"
-                  className="kategori-fiyat-input mx-2"
-                />
-              </div>
-              <Link className="kategori-button">Ara</Link>
-            </div>
-          </div>
+        <div className="kategoriler max-md:hidden">
+          <FilterGroup />
         </div>
+        <div className="hidden max-md:block">
+          <span
+            className="flex gap-1 items-center mx-auto justify-center max-md:text-xl max-sm:lg my-3 cursor-pointer w-[50%] filtre-btn"
+            onClick={() => setFiltreIsOpen(true)}
+          >
+            Filtrele <FiFilter />
+          </span>
+        </div>
+        {filtreIsOpen && <PopupFilter />}
       </div>
 
-      <motion.div layout className="w-fit ml-[1vw] product-container">
+      <motion.div layout className="w-full max-md:ml-0 product-container rounded-lg">
         <AnimatePresence>
           {filtreliListe.map((product, index) => (
             <ProductItems key={index} product={product} index={index} />

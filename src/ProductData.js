@@ -31,6 +31,7 @@ const productData = [
       "https://picsum.photos/seed/img2/640/400",
       "https://picsum.photos/seed/img3/640/400",
     ],
+    emlakcı_foto: "../../images/img_avatar2.png",
   },
   {
     id: 1,

@@ -1,11 +1,11 @@
 .box-container {
-  @apply flex flex-col p-2 rounded-lg pt-[0.75vw] w-[300px] h-[440px] max-lg:h-[400px] ;
+  @apply flex w-full items-center h-fit mb-2 rounded-lg max-sm:flex-col;
   background-color: #fdfdfd;
 }
 
 .img-box {
-  max-width: 100%;
-  height: 400px;
+  @apply w-[35%] max-sm:w-full h-[160px] max-sm:h-[180px] object-center ;
+  padding: .25rem;
 }
 
 .ozellikler {
@@ -27,8 +27,7 @@
 }
 
 .fiyat-durum {
-  display: flex;
-  justify-content: space-between;
+  @apply flex justify-between items-center w-full px-1;
   margin: 0.4rem 0;
 }
 
@@ -53,8 +52,12 @@
   margin-left: 0.25rem;
 }
 
+.emlak-bilgi{
+  border-left: 1px solid #3d3d43;
+}
+
 .btn {
-  @apply flex w-full justify-center items-center p-1 rounded-lg my-3;
+  @apply flex w-[100px] justify-center items-center p-1 rounded-lg my-3;
   background-color: #f67009;
   border: 2px solid transparent;
   color: #3d3d43;
