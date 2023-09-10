@@ -44,7 +44,6 @@ const FilterGroup = () => {
           Kiralık (
           {MainList.filter((item) => item.durum.includes("Kiralık")).length})
         </button>
-        <p className="kategori-secenek">Ticari</p>
       </div>
       <div className="kategori-fiyat-secenek">
         <span className="text-center m-auto block mt-5">

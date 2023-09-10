@@ -3,7 +3,7 @@
 }
 
 .kategori-liste {
-  @apply text-xl text-blue-600 cursor-pointer w-fit max-lg:text-lg max-md:text-base max-sm:text-sm;
+  @apply lg:text-[2vw]/[2.25vw] lg:mb-[0.5vw] text-xl w-full text-blue-600 cursor-pointer max-lg:text-lg max-md:text-base max-sm:text-xs max-md:w-fit ;
   transition: 500ms;
 }
 
@@ -27,11 +27,11 @@
 }
 
 .kategori-liste-adet {
-  @apply text-base text-blue-400 ml-1 max-md:text-sm max-sm:text-xs;
+  @apply lg:text-[1.5vw]/[1.75vw] text-base text-blue-400 ml-1 max-md:text-sm max-sm:text-xs;
 }
 
 .kategori-secenek {
-  @apply my-[0.75vw] text-[1.5vw] w-fit cursor-pointer block rounded-2xl max-md:mx-[0.75vw] max-md:text-lg max-sm:text-sm;
+  @apply lg:rounded-[2vw] my-[0.75vw] text-[1.5vw] w-fit cursor-pointer block rounded-2xl max-md:mx-[0.75vw] max-md:text-lg max-sm:text-sm;
   padding: 0.5vw 1vw;
   color: red;
   border: 1px solid red;
@@ -44,7 +44,7 @@
 }
 
 .kategori-fiyat-secenek {
-  @apply text-xl max-md:text-lg max-sm:text-sm;
+  @apply lg:text-[1.5vw]/[1.75vw] text-xl max-md:text-lg max-sm:text-sm;
 }
 
 .kategori-fiyat-input {

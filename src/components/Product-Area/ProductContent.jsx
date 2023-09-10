@@ -50,7 +50,7 @@ const ProductContent = ({ product }) => {
             ></div>
 
             <button
-              className="slide-button-left "
+              className="slide-button-left"
               onClick={slidePerivosHandler}
             >
               <BsFillArrowLeftCircleFill />

@@ -2,15 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    padding: 2vw;
-    background-color: #EEF2F6 ;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+  padding: 2vw;
+  background-color: #eef2f6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slide-button-left {
+  @apply group-hover:block hidden absolute top-[50%] -translate-x-0 translate-y-[-50%] left-1 text-2xl rounded-full p-2 text-white cursor-pointer transition-all lg:text-[1.75vw]/[2vw] ;
+}
+
+.slide-button-right {
+  @apply group-hover:block hidden absolute top-[50%] -translate-x-0 translate-y-[-50%] right-1 text-2xl rounded-full p-2 text-white cursor-pointer transition-all lg:text-[1.75vw]/[2vw] ;
 }

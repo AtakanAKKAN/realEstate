@@ -17,16 +17,6 @@
   background-color: transparent;
 }
 
-.slide-button-left {
-  @apply hidden group-hover:block absolute top-[40%] -translate-x-0 translate-y-[-50%] left-[1.2vw] rounded-full p-[.5vw] text-white cursor-pointer;
-  font-size: 3vw;
-}
-
-.slide-button-right {
-  @apply hidden group-hover:block absolute top-[40%] -translate-x-0 translate-y-[-50%] right-[1.2vw] rounded-full p-[.5vw] text-white cursor-pointer;
-  font-size: 3vw;
-}
-
 .ana-resim {
   @apply w-full rounded-[1.5vw] bg-center bg-cover duration-500;
   min-height: 90vh;
