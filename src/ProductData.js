@@ -32,6 +32,10 @@ const productData = [
       "https://picsum.photos/seed/img3/640/400",
     ],
     emlakcı_foto: "./img_avatar2.png",
+    mülk_adress:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.6176718267616!2d31.166374374656783!3d40.90220087136564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409da0e71807b819%3A0xf5a98828838bb9a4!2sAcademia%20Tower!5e0!3m2!1str!2str!4v1694506198728!5m2!1str!2str",
+    mülk_adress_sokak:
+      "https://www.google.com/maps/embed?pb=!4v1694508879100!6m8!1m7!1syZyTDCFkgRpxX3zPKk4TSA!2m2!1d40.90212556154644!2d31.16904740513881!3f30.21439060999016!4f-12.93606985765203!5f0.7820865974627469",
   },
   {
     id: 1,
@@ -65,6 +69,10 @@ const productData = [
       "https://picsum.photos/id/16/640/400",
       "https://picsum.photos/id/17/640/400",
     ],
+    mülk_adress:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.6176718267616!2d31.166374374656783!3d40.90220087136564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409da0e71807b819%3A0xf5a98828838bb9a4!2sAcademia%20Tower!5e0!3m2!1str!2str!4v1694506198728!5m2!1str!2str",
+    mülk_adress_sokak:
+      "https://www.google.com/maps/embed?pb=!4v1694508879100!6m8!1m7!1syZyTDCFkgRpxX3zPKk4TSA!2m2!1d40.90212556154644!2d31.16904740513881!3f30.21439060999016!4f-12.93606985765203!5f0.7820865974627469",
   },
   {
     id: 2,
@@ -98,6 +106,11 @@ const productData = [
       "https://picsum.photos/id/19/640/400",
       "https://picsum.photos/id/20/640/400",
     ],
+    mülk_adress:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.6176718267616!2d31.166374374656783!3d40.90220087136564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409da0e71807b819%3A0xf5a98828838bb9a4!2sAcademia%20Tower!5e0!3m2!1str!2str!4v1694506198728!5m2!1str!2str",
+
+    mülk_adress_sokak:
+      "https://www.google.com/maps/embed?pb=!4v1694508879100!6m8!1m7!1syZyTDCFkgRpxX3zPKk4TSA!2m2!1d40.90212556154644!2d31.16904740513881!3f30.21439060999016!4f-12.93606985765203!5f0.7820865974627469",
   },
   {
     id: 3,
@@ -131,6 +144,8 @@ const productData = [
       "https://picsum.photos/id/22/640/400",
       "https://picsum.photos/id/23/640/400",
     ],
+    mülk_adress:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.6176718267616!2d31.166374374656783!3d40.90220087136564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409da0e71807b819%3A0xf5a98828838bb9a4!2sAcademia%20Tower!5e0!3m2!1str!2str!4v1694506198728!5m2!1str!2str",
   },
   {
     id: 4,
@@ -164,6 +179,10 @@ const productData = [
       "https://picsum.photos/id/25/640/400",
       "https://picsum.photos/id/26/640/400",
     ],
+    mülk_adress:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.6176718267616!2d31.166374374656783!3d40.90220087136564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409da0e71807b819%3A0xf5a98828838bb9a4!2sAcademia%20Tower!5e0!3m2!1str!2str!4v1694506198728!5m2!1str!2str",
+    mülk_adress_sokak:
+      "https://www.google.com/maps/embed?pb=!4v1694508879100!6m8!1m7!1syZyTDCFkgRpxX3zPKk4TSA!2m2!1d40.90212556154644!2d31.16904740513881!3f30.21439060999016!4f-12.93606985765203!5f0.7820865974627469",
   },
   {
     id: 5,
@@ -197,6 +216,10 @@ const productData = [
       "https://picsum.photos/id/28/640/400",
       "https://picsum.photos/id/29/640/400",
     ],
+    mülk_adress:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.6176718267616!2d31.166374374656783!3d40.90220087136564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409da0e71807b819%3A0xf5a98828838bb9a4!2sAcademia%20Tower!5e0!3m2!1str!2str!4v1694506198728!5m2!1str!2str",
+    mülk_adress_sokak:
+      "https://www.google.com/maps/embed?pb=!4v1694508879100!6m8!1m7!1syZyTDCFkgRpxX3zPKk4TSA!2m2!1d40.90212556154644!2d31.16904740513881!3f30.21439060999016!4f-12.93606985765203!5f0.7820865974627469",
   },
 ];
 

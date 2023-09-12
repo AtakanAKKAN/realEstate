@@ -11,7 +11,6 @@ const ProductInfo = () => {
   return (
     <div className="w-full p-[1.2vw] rounded-[2vw] mt-[.50vw]">
       <ProductContent product={product} key={id} />
-      
     </div>
   );
 };

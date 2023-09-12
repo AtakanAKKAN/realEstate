@@ -18,8 +18,7 @@
 }
 
 .ana-resim {
-  @apply w-full rounded-[1.5vw] bg-center bg-cover duration-500;
-  min-height: 90vh;
+  @apply w-full rounded-[1.5vw] duration-500;
 }
 
 .emlakcı-kutusu {
