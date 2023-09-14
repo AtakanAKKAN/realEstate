@@ -1,15 +1,35 @@
-.nav-link{
-    @apply mr-[1.5vw] text-[1.5vw] max-lg:hidden;
+.nav-link {
+  @apply ml-[1.5vw] text-[1.5vw]/[1.25vw] max-md:text-lg max-sm:text-base max-lg:hidden;
 }
 
-.login-hover{
-    transition: 250ms;
+.login-hover {
+  transition: 250ms;
 }
 
-.login-hover:hover{
-    color: blue;
+.login-hover:hover {
+  color: blue;
 }
 
-.hamburger{
-    @apply hidden max-lg:block text-2xl max-sm:text-xl ;
+.hamburger {
+  @apply hidden max-lg:block text-2xl max-sm:text-xl transition-all;
 }
+
+.nav-link-hamburger {
+  @apply text-base my-[2vw] text-white;
+}
+
+.offcanvas {
+  @apply fixed ml-auto w-72 flex flex-col items-end inset-0 bg-black/80 z-10 transition-all duration-700 pt-[10vh] lg:hidden;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateX(25rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }

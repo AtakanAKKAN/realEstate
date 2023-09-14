@@ -7,7 +7,7 @@ const PopupFilter = () => {
   const { setFiltreIsOpen } = useContext(MyContext);
 
   return (
-      <div onClick={() => setFiltreIsOpen(false)} className="fixed inset-0 flex justify-center items-center  bg-black/80 z-10 transition-all duration-700 p-2">
+      <div onClick={() => setFiltreIsOpen(false)} className="fixed inset-0 flex justify-center items-center bg-black/80 z-10 transition-all duration-700 p-2">
         <div onClick={(e) => e.stopPropagation()} className="bg-[#f5f5f7] p-5 z-20 rounded-xl">
             <FilterGroup />
         </div>

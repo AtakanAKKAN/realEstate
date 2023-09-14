@@ -39,7 +39,7 @@ const HaritaPopUP = (props) => {
         </button>
       </div>
 
-      <div className="w-[95%]">
+      <div className="w-[95%] bg-white">
         <iframe
           title={props.portföy}
           src={props.mülk_adress}
