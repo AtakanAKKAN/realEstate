@@ -2,12 +2,13 @@ import React, { useContext, useState } from "react";
 import ProductItems from "./ProductItems";
 import "./Products.css";
 import productData from "../../ProductData";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+// import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { MyContext } from "../../Context/MyContext";
 import { motion, AnimatePresence } from "framer-motion";
 import PopupFilter from "./Product-Area-PopUp/PopupFilter";
 import FilterGroup from "./FilterGroup";
 import { FiFilter } from "react-icons/fi";
+import { LiaAngleRightSolid, LiaAngleLeftSolid } from "react-icons/lia";
 
 const Products = () => {
   const { filtreliListe, filtreIsOpen, setFiltreIsOpen } =
@@ -49,7 +50,7 @@ const Products = () => {
   // };
 
   return (
-    <div className="w-full flex max-md:flex-col rounded-lg mt-5 gap-2 relative mb-[8%] ">
+    <div className="w-full flex max-md:flex-col rounded-lg mt-[5%] gap-2 relative mb-[8%] ">
       <aside className="w-[30%] flex flex-col bg-slate-50 p-4 rounded-lg max-md:w-full">
         <div className="flex flex-col w-full max-md:flex-row max-md:justify-around mb-2 ">
           <span className="kategori-liste">Gayrimenkul</span>
@@ -80,8 +81,43 @@ const Products = () => {
 
       <motion.div
         layout
-        className="w-full max-md:ml-0 product-container rounded-lg"
+        className="w-full max-md:ml-0 product-container rounded-lg max-md:mt-10 relative"
       >
+        <ul className="absolute -top-[6%] w-full flex text-2xl gap-2 justify-end items-center pr-[3%] max-md:-top-10">
+          <li
+            onClick={prevPageHandler}
+            className={`${
+              currentPage === 1
+                ? "pointer-events-none opacity-50 scale-75"
+                : "pointer-events-auto cursor-pointer scale-110"
+            } transition-all`}
+          >
+            <LiaAngleLeftSolid size={30} />
+          </li>
+          <li className="flex gap-2 cursor-pointer">
+            {numbers.map((n, i) => (
+              <span
+                key={i}
+                onClick={() => currentPageHandler(n)}
+                className={`${
+                  currentPage === n ? "text-blue-800 underline" : "text-black"
+                } text-2xl mx-2`}
+              >
+                {n}
+              </span>
+            ))}
+          </li>
+          <li
+            onClick={nextPageHandler}
+            className={`${
+              currentPage === nPage
+                ? "pointer-events-none opacity-50 scale-75"
+                : "pointer-events-auto cursor-pointer scale-110"
+            } transition-all`}
+          >
+            <LiaAngleRightSolid size={30} />
+          </li>
+        </ul>
         <AnimatePresence>
           {records.map((product, index) => (
             <ProductItems key={index} product={product} index={index} />
@@ -89,16 +125,16 @@ const Products = () => {
         </AnimatePresence>
       </motion.div>
 
-      <ul className="absolute -bottom-[8%] w-full flex text-2xl gap-2 justify-end items-center pr-[3%]">
+      <ul className="absolute -bottom-[8%] w-full flex text-2xl gap-2 justify-end items-center pr-[3%] max-sm:-bottom-10">
         <li
           onClick={prevPageHandler}
           className={`${
             currentPage === 1
               ? "pointer-events-none opacity-50 scale-75"
-              : "pointer-events-auto cursor-pointer scale-125"
+              : "pointer-events-auto cursor-pointer scale-110"
           } transition-all`}
         >
-          <GoArrowLeft size={36} />
+          <LiaAngleLeftSolid size={30} />
         </li>
         <li className="flex gap-2 cursor-pointer">
           {numbers.map((n, i) => (
@@ -117,11 +153,11 @@ const Products = () => {
           onClick={nextPageHandler}
           className={`${
             currentPage === nPage
-            ? "pointer-events-none opacity-50 scale-75"
-            : "pointer-events-auto cursor-pointer scale-125"
+              ? "pointer-events-none opacity-50 scale-75"
+              : "pointer-events-auto cursor-pointer scale-110"
           } transition-all`}
         >
-          <GoArrowRight size={36} />
+          <LiaAngleRightSolid size={30} />
         </li>
       </ul>
     </div>

@@ -19,7 +19,7 @@
 }
 
 .offcanvas {
-  @apply fixed ml-auto w-72 flex flex-col items-end inset-0 bg-black/80 z-10 transition-all duration-700 pt-[10vh] lg:hidden;
+  @apply fixed ml-auto w-72 max-sm:w-60 flex flex-col items-end inset-0 bg-black/80 z-10 transition-all duration-700 pt-[10vh] lg:hidden;
   animation: slide-down 300ms ease-out forwards;
 }
 

@@ -63,7 +63,7 @@ const ProductItems = ({ product, index }) => {
         <img
           src={url[currentIndex]}
           alt=""
-          className={`lg:rounded-[1.15vw] transition-all duration-300 rounded-lg w-full h-full object-contain ${
+          className={`lg:rounded-[1.15vw] transition-all duration-300 rounded-lg w-full h-full object-contain  ${
             IsSlideChange ? "scale-75" : "scale-100"
           }`}
         />

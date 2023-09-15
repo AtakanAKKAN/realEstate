@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ProductContent.css";
 import {
-  // BsTelephoneForward,
+  BsTelephoneForward,
   BsFillArrowRightCircleFill,
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
@@ -45,29 +45,36 @@ const ProductContent = ({ product }) => {
 
   return (
     <div className="p-[1.2vw] flex flex-col w-full" key={id}>
-      <h2 className="text-[2vw] w-[70%] mb-[.75vw]">{başlık}</h2>
+      <h2 className="text-[2vw] w-[70%] mb-[.75vw] max-sm:text-lg max-sm:w-full">
+        {başlık}
+      </h2>
       <small className="portföy mb-2">Portföy No: {portföy}</small>
       <div className="flex gap-[1.5vw] relative">
         <div className="w-[100%] flex gap-[1.5vw] max-lg:flex-col">
-          <div className="w-[100%] relative group" id="resim">
+          <div className="w-[100%] relative" id="resim">
             {/* <div
               style={{ backgroundImage: `url(${url[currentIndex]})` }}
               className="ana-resim"
             ></div> */}
 
-            <img src={url[currentIndex]} className="ana-resim" alt="" />
+            <div className="w-[100%] relative group">
+              <img src={url[currentIndex]} className="ana-resim" alt="" />
 
-            <button className="slide-button-left" onClick={slidePerivosHandler}>
-              <BsFillArrowLeftCircleFill />
-            </button>
-            <button className="slide-button-right" onClick={slideNextHandler}>
-              <BsFillArrowRightCircleFill />
-            </button>
+              <button
+                className="slide-button-left"
+                onClick={slidePerivosHandler}
+              >
+                <BsFillArrowLeftCircleFill />
+              </button>
+              <button className="slide-button-right" onClick={slideNextHandler}>
+                <BsFillArrowRightCircleFill />
+              </button>
+            </div>
 
-            <div className="w-[100%] flex flex-wrap ">
+            <div className="w-[100%] resim-galerisi ">
               {url.map((item, index) => (
                 <img
-                  className="w-[13vw] object-cover m-[1vw_1vw_2vw_0]"
+                  className="w-full h-auto object-cover m-auto rounded-md"
                   onClick={() => setCurrentIndex(index)}
                   src={item}
                   alt=""
@@ -76,10 +83,12 @@ const ProductContent = ({ product }) => {
               ))}
             </div>
           </div>
-          <div className="w-[30%] max-lg:w-[35%]  flex flex-col" id="içerik">
-            <span className="text-[2vw] font-bold">{price} ₺</span>
-            <span className="mb-[0.75vw] text-[1.5vw]">
-              {adres.il && adres.il} / {adres.ilçe && adres.ilçe} /
+          <div className="w-[30%] max-lg:w-[55%]  flex flex-col" id="içerik">
+            <span className="text-[2vw] font-bold max-lg:text-2xl">
+              {price} ₺
+            </span>
+            <span className="mb-[0.75vw] text-[1.5vw] max-md:text-lg max-sm:text-[0.6rem]/[0.8rem]">
+              {adres.il && adres.il} / {adres.ilçe && adres.ilçe} /{" "}
               {adres.mahalle && adres.mahalle} / {adres.sokak && adres.sokak}
             </span>
             <div className="ozellik_kutusu">
@@ -105,21 +114,25 @@ const ProductContent = ({ product }) => {
           </div>
         </div>
         <div className="emlakcı-kutusu" id="emlakcı">
-          <div className="relative">
-            <div className="w-[30%] h-auto">
-              <img src={require("../../images/img_avatar2.png")} alt="" />
+          <div className="relative flex gap-3 max-md:flex-col items-center justify-center mb-1">
+            <div className="w-[40%] h-auto">
+              <img
+                src={require("../../images/img_avatar2.png")}
+                alt=""
+                className="w-full rounded-[50%]"
+              />
             </div>
-            <div className="flex flex-col absolute top-0 right-0 w-[60%]">
-              <strong className="text-[1.4vw]">{emlakcı}</strong>
-              <span className="text-[1.3vw]">{ünvan}</span>
-              <small className="text-[1.3vw]">{emlakcı_adres} </small>
+            <div className="flex flex-col w-[60%] max-md:text-center">
+              <strong className="text-[1.4vw] max-md:text-xs">{emlakcı}</strong>
+              <span className="text-[1.3vw] max-md:text-xs">{ünvan}</span>
+              <small className="text-[1.3vw] max-md:text-xs">{emlakcı_adres} </small>
             </div>
           </div>
           <button className="emlakcı-button">
-            {/* <span className="absolute top-2 left-[25%]">
+            <span>
               <BsTelephoneForward />
-            </span> */}
-            İletişim Bilgileri
+            </span>
+            <span>Emlakçı Bilgileri</span>
           </button>
         </div>
       </div>
@@ -128,7 +141,7 @@ const ProductContent = ({ product }) => {
         <img
           src="https://www.alastyr.com/blog/wp-content/uploads/2021/06/google-maps-api.jpg"
           alt=""
-          className="w-full max-w-[400px] h-24 object-cover rounded-md"
+          className="w-full max-w-[400px] h-24 max-sm:h-14 object-cover rounded-md"
         />
         <span
           className="absolute text-2xl max-md:text-lg max-sm:text-sm flex justify-center items-center gap-3 p-2 bg-white/70 rounded-lg hover:underline cursor-pointer hover:bg-white/90 transition-all"
