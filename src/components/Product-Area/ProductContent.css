@@ -19,11 +19,11 @@
 }
 
 .ana-resim {
-  @apply w-full rounded-[1.5vw] duration-500 max-sm:h-[280px] max-sm:object-contain;
+  @apply w-full rounded-[1.5vw] duration-500 max-sm:h-[280px] max-sm:object-contain lg:mb-2;
 }
 
 .emlakcı-kutusu {
-  @apply absolute -right-[1vw] -bottom-3 p-[.75vw] bg-slate-50 rounded-[0.5vw] w-[45%] max-lg:p-3;
+  @apply absolute -right-[2vw] -bottom-4 p-[.75vw] bg-slate-50 rounded-[0.5vw] w-[30%] max-md:w-[45%] max-lg:p-3;
 }
 
 .resim-galerisi {
