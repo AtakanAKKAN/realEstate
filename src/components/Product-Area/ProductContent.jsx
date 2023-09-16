@@ -51,7 +51,7 @@ const ProductContent = ({ product }) => {
       <small className="portföy mb-2">Portföy No: {portföy}</small>
       <div className="flex gap-[1.5vw] relative">
         <div className="w-[100%] flex gap-[1.5vw] max-lg:flex-col">
-          <div className="w-[100%] relative" id="resim">
+          <div className="w-[70%] relative max-lg:w-full" id="resim">
             {/* <div
               style={{ backgroundImage: `url(${url[currentIndex]})` }}
               className="ana-resim"
@@ -83,61 +83,77 @@ const ProductContent = ({ product }) => {
               ))}
             </div>
           </div>
-          <div className="w-[30%] max-lg:w-[55%]  flex flex-col" id="içerik">
-            <span className="text-[2vw] font-bold max-lg:text-2xl">
-              {price} ₺
-            </span>
-            <span className="mb-[0.75vw] text-[1.5vw] max-md:text-lg max-sm:text-[0.6rem]/[0.8rem]">
-              {adres.il && adres.il} / {adres.ilçe && adres.ilçe} /{" "}
-              {adres.mahalle && adres.mahalle} / {adres.sokak && adres.sokak}
-            </span>
-            <div className="ozellik_kutusu">
-              <strong className="w-full">Emlak Tipi</strong>
-              <span className="w-full">{Emlak_Tipi} </span>
+          <div className="w-[30%] max-lg:w-full flex flex-col" id="içerik">
+            <div className="mb-auto max-lg:mb-4">
+              <span className="text-[2vw] font-bold max-lg:text-2xl block">
+                {price} ₺
+              </span>
+              <span className="mb-[0.75vw] text-[1.5vw] max-md:text-lg max-sm:text-[0.6rem]/[0.8rem]">
+                {adres.il && adres.il} / {adres.ilçe && adres.ilçe} /{" "}
+                {adres.mahalle && adres.mahalle} / {adres.sokak && adres.sokak}
+              </span>
+              <div className="ozellik_kutusu">
+                <strong className="w-full">Emlak Tipi</strong>
+                <span className="w-full">{Emlak_Tipi} </span>
+              </div>
+              <div className="ozellik_kutusu">
+                <strong className="w-full">m2 (brüt)</strong>
+                <span className="w-full">{m_2_brüt} </span>
+              </div>
+              <div className="ozellik_kutusu">
+                <strong className="w-full">m2 (net)</strong>
+                <span className="w-full">{m_2_net} </span>
+              </div>
+              <div className="ozellik_kutusu">
+                <strong className="w-full">Oda Sayısı:</strong>
+                <span className="w-full">{oda_sayısı} </span>
+              </div>
+              <div className="ozellik_kutusu">
+                <strong className="w-full">Bina Yaşı:</strong>
+                <span className="w-full">{bina_yaşı} </span>
+              </div>
             </div>
-            <div className="ozellik_kutusu">
-              <strong className="w-full">m2 (brüt)</strong>
-              <span className="w-full">{m_2_brüt} </span>
-            </div>
-            <div className="ozellik_kutusu">
-              <strong className="w-full">m2 (net)</strong>
-              <span className="w-full">{m_2_net} </span>
-            </div>
-            <div className="ozellik_kutusu">
-              <strong className="w-full">Oda Sayısı:</strong>
-              <span className="w-full">{oda_sayısı} </span>
-            </div>
-            <div className="ozellik_kutusu">
-              <strong className="w-full">Bina Yaşı:</strong>
-              <span className="w-full">{bina_yaşı} </span>
+            <div className="emlakcı-kutusu" id="emlakcı">
+              <div className="relative flex gap-3 justify-center mb-4 flex-col ">
+                <div className="w-full h-auto flex gap-2 justify-center items-center">
+                  <div className="w-[40%] max-md:w-[55%] h-auto">
+                    <img
+                      src={require("../../images/img_avatar2.png")}
+                      alt=""
+                      className="w-full rounded-[50%]"
+                    />
+                  </div>
+                  <div className="flex flex-col lg:mb-2 mb-auto w-full justify-center my-auto gap-2">
+                    <strong className="text-[1.4vw] max-md:text-3xl max-sm:text-sm">
+                      {emlakcı}
+                    </strong>
+                    <span className="text-[1.3vw] max-md:text-3xl max-sm:text-sm">
+                      {ünvan}
+                    </span>
+                    <small className="text-[1.3vw] max-md:text-3xl max-sm:text-xs">
+                      {emlakcı_adres}{" "}
+                    </small>
+                  </div>
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex flex-col text-base max-sm:text-sm">
+                    <span>Cep Telefonu Numaranız</span>
+                    <span className="p-1 telefon">+90 (___) ___ __ __</span>
+                  </div>
+                </div>
+              </div>
+              <button className="emlakcı-button">
+                <span>
+                  <BsTelephoneForward />
+                </span>
+                <span>İletişime Geç</span>
+              </button>
             </div>
           </div>
-        </div>
-        <div className="emlakcı-kutusu" id="emlakcı">
-          <div className="relative flex gap-3 max-md:flex-col items-center justify-center mb-1">
-            <div className="w-[40%] h-auto">
-              <img
-                src={require("../../images/img_avatar2.png")}
-                alt=""
-                className="w-full rounded-[50%]"
-              />
-            </div>
-            <div className="flex flex-col w-[60%] max-md:text-center">
-              <strong className="text-[1.4vw] max-md:text-xs">{emlakcı}</strong>
-              <span className="text-[1.3vw] max-md:text-xs">{ünvan}</span>
-              <small className="text-[1.3vw] max-md:text-xs">{emlakcı_adres} </small>
-            </div>
-          </div>
-          <button className="emlakcı-button">
-            <span>
-              <BsTelephoneForward />
-            </span>
-            <span>Emlakçı Bilgileri</span>
-          </button>
         </div>
       </div>
 
-      <div className="relative max-md:w-[300px] max-sm:w-[200px] w-[400px] flex justify-center items-center rounded-md mt-4">
+      <div className="relative max-md:w-[300px] max-sm:max-w-[200px] max-w-[400px] w-full flex justify-center items-center rounded-md mt-4">
         <img
           src="https://www.alastyr.com/blog/wp-content/uploads/2021/06/google-maps-api.jpg"
           alt=""

@@ -13,7 +13,7 @@
 }
 
 .harita {
-  @apply w-full h-[80vh] z-20;
+  @apply w-full h-[80vh] z-20 max-sm:h-[90vh];
   display: none;
 }
 
