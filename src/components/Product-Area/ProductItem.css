@@ -9,7 +9,7 @@
 }
 
 .ozellikler {
-  @apply lg:text-[1.5vw]/[1.75vw] text-lg;
+  @apply text-base max-md:text-sm max-sm:text-xs;
   display: flex;
   flex-wrap: wrap;
   color: #3d3d43;
@@ -17,7 +17,7 @@
 }
 
 .ozellik-kutusu {
-  @apply flex w-fit mr-1 justify-center items-center rounded-lg p-1 mb-1;
+  @apply flex w-fit mr-1 justify-center items-center rounded-lg p-1;
   background-color: rgb(190, 190, 190);
 }
 
@@ -31,7 +31,7 @@
 }
 
 .fiyat {
-  @apply lg:text-[1.5vw] text-lg font-bold;
+  @apply  text-lg font-bold;
 }
 
 .durum {
@@ -42,7 +42,7 @@
 }
 
 .konum {
-  @apply lg:text-[2vw] flex text-lg items-center my-1;
+  @apply  flex text-xl items-center my-1;
   color: #3d3d43;
   font: bold;
 }

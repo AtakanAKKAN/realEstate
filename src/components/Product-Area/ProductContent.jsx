@@ -44,8 +44,8 @@ const ProductContent = ({ product }) => {
   console.log(url.length);
 
   return (
-    <div className="p-[1.2vw] flex flex-col w-full" key={id}>
-      <h2 className="text-[2vw] w-[70%] mb-[.75vw] max-sm:text-lg max-sm:w-full">
+    <div className=" flex flex-col w-full  m-auto" key={id}>
+      <h2 className="text-3xl w-[90%] mb-[.75vw] max-sm:text-lg max-sm:w-full">
         {başlık}
       </h2>
       <small className="portföy mb-2">Portföy No: {portföy}</small>
@@ -57,7 +57,7 @@ const ProductContent = ({ product }) => {
               className="ana-resim"
             ></div> */}
 
-            <div className="w-[100%] relative group">
+            <div className="max-w-[1400px] w-[90%] max-md:w-full relative group m-auto">
               <img src={url[currentIndex]} className="ana-resim" alt="" />
 
               <button
@@ -85,10 +85,10 @@ const ProductContent = ({ product }) => {
           </div>
           <div className="w-[30%] max-lg:w-full flex flex-col" id="içerik">
             <div className="mb-auto max-lg:mb-4">
-              <span className="text-[2vw] font-bold max-lg:text-2xl block">
+              <span className="text-3xl font-bold max-lg:text-2xl block">
                 {price} ₺
               </span>
-              <span className="mb-[0.75vw] text-[1.5vw] max-md:text-lg max-sm:text-[0.6rem]/[0.8rem]">
+              <span className="mb-[0.75vw] text-lg max-sm:text-[0.6rem]/[0.8rem]">
                 {adres.il && adres.il} / {adres.ilçe && adres.ilçe} /{" "}
                 {adres.mahalle && adres.mahalle} / {adres.sokak && adres.sokak}
               </span>
@@ -124,13 +124,13 @@ const ProductContent = ({ product }) => {
                     />
                   </div>
                   <div className="flex flex-col lg:mb-2 mb-auto w-full justify-center my-auto gap-2">
-                    <strong className="text-[1.4vw] max-md:text-3xl max-sm:text-sm">
+                    <strong className="text-xl max-md:text-3xl max-sm:text-sm">
                       {emlakcı}
                     </strong>
-                    <span className="text-[1.3vw] max-md:text-3xl max-sm:text-sm">
+                    <span className="text-lg max-md:text-3xl max-sm:text-sm">
                       {ünvan}
                     </span>
-                    <small className="text-[1.3vw] max-md:text-3xl max-sm:text-xs">
+                    <small className="text-lg max-md:text-3xl max-sm:text-xs">
                       {emlakcı_adres}{" "}
                     </small>
                   </div>

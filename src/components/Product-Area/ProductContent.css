@@ -1,14 +1,14 @@
 .portföy {
-  @apply text-[1vw] max-sm:text-sm;
+  @apply text-sm;
   color: #4b586f;
 }
 
 .ozellik_kutusu {
-  @apply w-full flex justify-between text-[1.5vw] items-start mb-[.375vw] max-lg:text-sm;
+  @apply w-full flex justify-between text-lg items-start mb-[.375vw] max-lg:text-sm max-sm:text-xs;
 }
 
 .emlakcı-button {
-  @apply w-full p-[0.3rem_0.6rem] text-[1.2vw] max-lg:text-[0.6rem]/[0.8rem] text-[#a8e6bc] text-lg bg-[#1737eb] rounded-md flex justify-center items-center gap-1 transition-all duration-500;
+  @apply w-full p-[0.3rem_0.6rem] text-lg max-lg:text-[0.6rem]/[0.8rem] text-[#a8e6bc] bg-[#1737eb] rounded-md flex justify-center items-center gap-1 transition-all duration-500;
   border: 2px solid #1737eb;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .emlakcı-kutusu {
-  @apply p-[.75vw] bg-slate-50 rounded-md w-[full] max-lg:w-[45%] max-md:w-full max-lg:p-3 mx-auto ;
+  @apply p-[.75vw] bg-slate-50 rounded-md w-[full] max-lg:w-[45%] max-md:w-full max-lg:p-3 mx-auto;
 }
 
 .resim-galerisi {
@@ -32,7 +32,7 @@
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
 }
 
-.telefon{
+.telefon {
   border: 1px solid rgb(0, 0, 0, 0.4);
   border-radius: 0.4rem;
 }

@@ -28,6 +28,13 @@ const ProductItems = ({ product, index }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [IsSlideChange, setIsSlideChange] = useState(false);
 
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const slideNextHandler = () => {
     const newIndex = currentIndex === url.length - 1 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
@@ -76,8 +83,10 @@ const ProductItems = ({ product, index }) => {
         </button>
       </div>
 
-      <Link to={`${durum}/${id}`} className="flex w-full">
-        <div className="flex flex-col items-start justify-between px-1 py-2 h-full w-[70%]">
+      <Link to={`${durum}/${id}`} onClick={handleClick} className="flex w-full">
+        <div
+          className="flex flex-col items-start justify-between px-1 py-2 h-full w-[70%]"
+        >
           <div className="konum">
             <span>
               <MdLocationOn />
@@ -121,18 +130,20 @@ const ProductItems = ({ product, index }) => {
             )}
           </div>
         </div>
-        <div className="w-[30%] flex flex-col items-center justify-center emlak-bilgi">
+        <div
+          className="w-[30%] flex flex-col items-center justify-center emlak-bilgi"
+        >
           <div className="w-full h-full flex flex-col items-center justify-center gap-4">
             <img
               src={url[0]}
               alt=""
               className="xl:w-[5vw] xl:h-[10vh] w-[60px] h-[60px] rounded-[50%]"
             />
-            <div className="flex flex-col justify-center items-start lg:gap-[.5vw] ">
-              <span className="lg:text-[1.4vw]/[1.15vw] font-bold text-base text-blue-500">
+            <div className="flex flex-col justify-center items-start">
+              <span className="text-lg font-bold max-sm:text-base text-blue-500">
                 {emlakcı}
               </span>
-              <span className="lg:text-[1.2vw]/[1.05vw] font-thin text-sm text-slate-700">
+              <span className="text-base font-thin max-sm:text-sm text-slate-700">
                 {ünvan}
               </span>
             </div>

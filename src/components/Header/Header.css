@@ -1,5 +1,5 @@
 .nav-link {
-  @apply ml-[1.5vw] text-[1.5vw]/[1.25vw] max-md:text-lg max-sm:text-base max-lg:hidden;
+  @apply ml-[1.5vw] text-lg max-sm:text-base max-lg:hidden;
 }
 
 .login-hover {

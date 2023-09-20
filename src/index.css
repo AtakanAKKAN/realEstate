@@ -2,11 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  font-size: 14px;
+  zoom: 0.95;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   padding: 2vw;
